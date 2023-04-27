@@ -15,6 +15,3 @@ If the pin is verified then they are redirected to home page else signup page
 - Pin generated is a random number in the range of 1 - 100
 - Used emailJs to send emails to clients
 - To configure emailJs, took help from https://www.youtube.com/watch?v=dgcYOm8n8ME
-
-Issues as of now:
-1. send the email of logged in user to verify html as we need send mail there

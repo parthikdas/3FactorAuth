@@ -1,7 +1,7 @@
 <?php
     session_start();
     include("connection.php");
-    echo $_SESSION['user_data']['id'];
+    // echo $_SESSION['user_data']['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,11 +41,11 @@
     <script>
         let rand = 0
         window.addEventListener("load", (event) => {
-            alert(email)
+            alert("<?php echo $_SESSION['user_data']['id']; ?>")
             rand = Math.floor(Math.random() * 100 + 1); // generating verification code range 1 - 100
             let params = {
-                name: 'pd4473@srmist.edu.in', // these 2 we need to change
-                email: 'pd4473@srmist.edu.in',//its in script.js
+                name: '<?php echo $_SESSION['user_data']['Name']; ?>',
+                email: '<?php echo $_SESSION['user_data']['Email']; ?>', // email of the logged in user
                 message: "The confirmation code is " + rand
             }
             const serviceId = "service_nmmarg5";
@@ -67,6 +67,7 @@
             }
         })
 
+    // Email.js account details
     // lalalalu69420@gmail.com
     // tanish@69420
     </script>
