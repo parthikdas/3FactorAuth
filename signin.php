@@ -1,7 +1,6 @@
 <?php
     session_start();
     include("connection.php");
-
     if($_SERVER['REQUEST_METHOD'] == "POST") {
         $email = $_POST['email'];
         $pass = $_POST['password'];
@@ -13,6 +12,7 @@
                 $user_data = mysqli_fetch_assoc($result);
                 if($user_data['password'] === $pass) { //if the password is correct
 					if($user_data['que'] === $que) { //if the ans is correct
+                        $_SESSION['user_data'] = $user_data; // store the logged in user details in session
                         header("Location: verify.php");
 					    die;
                     } else {

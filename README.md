@@ -18,4 +18,3 @@ If the pin is verified then they are redirected to home page else signup page
 
 Issues as of now:
 1. send the email of logged in user to verify html as we need send mail there
-2. send the details/name of logged in user

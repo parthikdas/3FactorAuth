@@ -1,4 +1,7 @@
-
+<?php
+    session_start();
+    include("connection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +22,6 @@
     </style>
 </head>
 <body>
-    <h1>👋 Hello World!</h1>
+    <h1>👋 Hello <?php echo $_SESSION['user_data']['Name'] ?>!</h1>
 </body>
 </html>

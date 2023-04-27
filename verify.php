@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include("connection.php");
+    echo $_SESSION['user_data']['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,21 +42,20 @@
         let rand = 0
         window.addEventListener("load", (event) => {
             alert(email)
-                rand = Math.floor(Math.random() * 100 + 1); // generating verification code range 1 - 100
-                let params = {
-                    name: 'pd4473@srmist.edu.in', // these 2 we need to change
-                    email: 'pd4473@srmist.edu.in',//its in script.js
-                    message: "The confirmation code is " + rand
-                }
-                const serviceId = "service_nmmarg5";
-                const templateId = "template_o20b5au";
-
-                emailjs
-                .send(serviceId, templateId, params)
-                .then((res)=>{
-                    console.log('Email sent')
-                })
-                .catch((err)=> console.log(err))
+            rand = Math.floor(Math.random() * 100 + 1); // generating verification code range 1 - 100
+            let params = {
+                name: 'pd4473@srmist.edu.in', // these 2 we need to change
+                email: 'pd4473@srmist.edu.in',//its in script.js
+                message: "The confirmation code is " + rand
+            }
+            const serviceId = "service_nmmarg5";
+            const templateId = "template_o20b5au";
+            emailjs
+            .send(serviceId, templateId, params)
+            .then((res)=>{
+                console.log('Email sent')
+            })
+            .catch((err)=> console.log(err))
         })
         document.getElementById('submit').addEventListener('click', () => {
             let pin = document.getElementById('pin')
