@@ -13,7 +13,7 @@
             if($lol) {
                 header("Location: signin.php");
             } else {
-                echo "Something is wrong!!";
+                echo "<script>alert('Something is wrong!!')</script>";
             }
         }
     }

@@ -55,7 +55,12 @@
         })
         document.getElementById('submit').addEventListener('click', () => {
             let pin = document.getElementById('pin')
-            window.location.href = pin.value == rand ? 'home.php' : 'index.php'
+            if(pin.value == rand) {
+                window.location.href = 'home.php'
+            } else {
+                alert('Wrong pin')
+                window.location.href =  'index.php'
+            }
         })
 
     // lalalalu69420@gmail.com
@@ -63,7 +68,3 @@
     </script>
 </body>
 </html>
-
-<!-- https://www.youtube.com/watch?v=dgcYOm8n8ME -->
-
-<!-- Used email.js to send email -->

@@ -13,16 +13,16 @@
                 $user_data = mysqli_fetch_assoc($result);
                 if($user_data['password'] === $pass) { //if the password is correct
 					if($user_data['que'] === $que) { //if the ans is correct
-                        header("Location: verify.html");
+                        header("Location: verify.php");
 					    die;
                     } else {
-                        echo "wrong ans";
+                        echo "<script>alert('wrong ans')</script>";
                     }
 				} else {
-                    echo "Wrong password";
+                    echo "<script>alert('Wrong password')</script>";
                 }
             } else {
-                echo "No such user";
+                echo "<script>alert('No such user')</script>";
             }
         }
     }
